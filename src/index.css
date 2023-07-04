@@ -11,3 +11,21 @@
     @apply font-secondary;
   }
 }
+
+/*before dos links no header*/
+
+.noHover::before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -6px;
+  height: 2px;
+  width: 0%;
+  background-color: #5865f2;
+  transition: 0.3s ease-in;
+}
+
+.yesHover:hover::before {
+  width: 100%;
+  transition: 0.3s ease-out;
+}
