@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .first {
+    @apply font-primary;
+  }
+
+  .second {
+    @apply font-secondary;
+  }
+}
