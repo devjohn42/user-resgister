@@ -1,22 +1,19 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import Header from "./components/global/Header";
-import Main from "./components/Main";
 import Footer from "./components/global/Footer";
+import AppRouter from "./AppRouter";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="h-[100vh] bg-main">
-        {/* <h1 className="text-principal text-9xl text-center font-bold red">
-          DS Levelup!!
-        </h1> */}
         <Header />
-        <Main />
+        <AppRouter />
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
