@@ -2,7 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {},
+    fontFamily: {
+      primary: "Roboto"
+    },
     screens: {
       sm: "640px",
       // => @media (min-width: 640px)
