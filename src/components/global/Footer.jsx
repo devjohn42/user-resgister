@@ -8,7 +8,10 @@ const link = "text-3xl text-principal";
 
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 w-full bg-content py-5 flex items-center justify-around drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+    <footer
+      className="absolute bottom-0 w-full bg-content py-5 
+    flex items-center justify-around drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
+    >
       <div className="flex gap-8">
         <a href="#" className={link}>
           <FaLinkedin />

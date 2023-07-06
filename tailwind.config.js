@@ -23,6 +23,7 @@ export default {
         main: "#23272A",
         content: "#2C2F33",
         principal: "#5865F2",
+        warning: "#B12121",
       },
     },
   },
