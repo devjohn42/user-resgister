@@ -14,6 +14,12 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*before dos links no header*/
 
 .noHover::before {

@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      primary: "Roboto"
+      primary: "Roboto",
     },
     screens: {
       sm: "640px",
