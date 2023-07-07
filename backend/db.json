@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "json-server",
       "email": "ping@gmail.com",
-      "nick": "_ping"
+      "nick": "_ping",
+      "id": 1
     }
   ]
 }
