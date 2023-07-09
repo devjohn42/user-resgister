@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const input = `bg-content py-[0.5rem] px-[1rem] rounded-[0.5rem] outline-none 
@@ -7,10 +7,12 @@ const input = `bg-content py-[0.5rem] px-[1rem] rounded-[0.5rem] outline-none
 
 const baseURL = "http://localhost:3000/users";
 
+//All comments go to the users component
+
 export default function Register() {
   const [data, setData] = useState({
     user: { name: "", email: "", nick: "" },
-    list: [],
+    // list: [],
   });
 
   const handleSave = () => {
@@ -18,17 +20,27 @@ export default function Register() {
     const method = user.id ? "put" : "post";
     const URL = user.id ? `${baseURL}/${user.id}` : baseURL;
     axios[method](URL, user).then((resp) => {
-      const list = handleUpdateList(resp.data);
-      setData({ user: data.user, list });
+      // const list = handleUpdateList(resp.data);
+      setData({ user: data.user /*, list*/ });
     });
   };
 
-  const handleUpdateList = (user, add = true) => {
-    const list = data.list.filter((u) => u.id !== user.id);
-    if (add) list.unshift(user);
-    return list;
+  const handleClear = () => {
+    setData({ user: { name: "", email: "", nick: "" } });
   };
-  console.log(data.user.email, data.user.name, data.user.nick);
+
+  // const handleUpdateList = (user, add = true) => {
+  //   const list = data.list.filter((u) => u.id !== user.id);
+  //   if (add) list.unshift(user);
+  //   return list;
+  // };
+
+  const handleUpdateField = (event) => {
+    const user = { ...data.user };
+    user[event.target.name] = event.target.value;
+    setData({ user });
+  };
+
   return (
     <main className="h-full flex flex-col items-center justify-center">
       <div
@@ -41,21 +53,27 @@ export default function Register() {
         <form className="w-[400px] flex flex-col gap-y-7">
           <input
             type="text"
-            name="nome"
-            placeholder="Nome..."
             className={input}
+            name="name"
+            value={data.user.name}
+            onChange={(e) => handleUpdateField(e)}
+            placeholder="Nome..."
           />
           <input
             type="email"
-            name="email"
-            placeholder="Email..."
             className={input}
+            name="email"
+            value={data.user.email}
+            onChange={(e) => handleUpdateField(e)}
+            placeholder="Email..."
           />
           <input
             type="text"
-            name="apelido"
-            placeholder="Apelido..."
             className={input}
+            name="nick"
+            value={data.user.nick}
+            onChange={(e) => handleUpdateField(e)}
+            placeholder="Apelido..."
           />
         </form>
         <div className="w-[400px] mt-8 flex items-center justify-around">
@@ -71,6 +89,7 @@ export default function Register() {
             className="bg-warning/70 py-1 px-8 font-primary text-lg font-bold 
           text-white rounded-[0.5rem] duration-300 
           hover:bg-warning hover:ease-in hover:duration-300"
+            onClick={(e) => handleClear(e)}
           >
             Cancelar
           </button>
