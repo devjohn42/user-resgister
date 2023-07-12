@@ -13,16 +13,24 @@ export default function Footer() {
     flex items-center justify-around drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
     >
       <div className="flex gap-8">
-        <a href="#" className={link}>
+        <a
+          href="https://www.linkedin.com/in/jo%C3%A3o-vitor-cardoso-barbosa-407173225/"
+          target="blank"
+          className={link}
+        >
           <FaLinkedin />
         </a>
-        <a href="#" className={link}>
+        <a href="https://github.com/devjohn42" target="blank" className={link}>
           <FaGithub />
         </a>
-        <a href="#" className={link}>
+        <a
+          href="https://www.instagram.com/devjohn42/"
+          target="blank"
+          className={link}
+        >
           <FaInstagram />
         </a>
-        <a href="#" className={link}>
+        <a href="https://twitter.com/devjohn42" target="blank" className={link}>
           <FaTwitter />
         </a>
       </div>
