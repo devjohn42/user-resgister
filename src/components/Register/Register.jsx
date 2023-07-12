@@ -12,7 +12,6 @@ const baseURL = "http://localhost:3000/users";
 export default function Register() {
   const [data, setData] = useState({
     user: { name: "", email: "", nick: "" },
-    // list: [],
   });
 
   const handleSave = () => {
@@ -20,20 +19,13 @@ export default function Register() {
     const method = user.id ? "put" : "post";
     const URL = user.id ? `${baseURL}/${user.id}` : baseURL;
     axios[method](URL, user).then((resp) => {
-      // const list = handleUpdateList(resp.data);
-      setData({ user: data.user /*, list*/ });
+      setData({ user: data.user });
     });
   };
 
   const handleClear = () => {
     setData({ user: { name: "", email: "", nick: "" } });
   };
-
-  // const handleUpdateList = (user, add = true) => {
-  //   const list = data.list.filter((u) => u.id !== user.id);
-  //   if (add) list.unshift(user);
-  //   return list;
-  // };
 
   const handleUpdateField = (event) => {
     const user = { ...data.user };
@@ -47,7 +39,7 @@ export default function Register() {
         className="flex flex-col items-center justify-center py-10 px-14 
       border-[3px] rounded-[1rem] border-principal"
       >
-        <h1 className="text-principal font-primary font-medium text-[5rem] mb-6">
+        <h1 className="text-principal font-primary font-medium text-[4.5rem] mb-6">
           Register
         </h1>
         <form className="w-[400px] flex flex-col gap-y-7">

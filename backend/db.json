@@ -1,34 +1,10 @@
 {
   "users": [
     {
-      "name": "json-server",
-      "email": "ping@gmail.com",
-      "nick": "_ping",
+      "name": "João Vitor",
+      "email": "john@gmail.com",
+      "nick": "morphos",
       "id": 1
-    },
-    {
-      "name": "asdasd",
-      "email": "asdasdasd",
-      "nick": "asdasdasdas",
-      "id": 2
-    },
-    {
-      "name": "asdasdasd",
-      "email": "asdasdasd",
-      "nick": "asdasdasd",
-      "id": 3
-    },
-    {
-      "name": "asdasda",
-      "email": "asdasdasd",
-      "nick": "asdasd",
-      "id": 4
-    },
-    {
-      "name": "asdasdasd",
-      "email": "asdasdas",
-      "nick": "333",
-      "id": 5
     }
   ]
 }
