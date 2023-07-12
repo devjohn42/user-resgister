@@ -25,6 +25,19 @@ export default function Users() {
     handleGetList();
   }, []);
 
+  const handleUpdateList = (user, add = true) => {
+    const list = data.filter((u) => u.id !== user.id);
+    if (add) list.unshift(user);
+    return list;
+  };
+
+  const handleRemove = (user) => {
+    axios.delete(`${baseURL}/${user.id}`).then((resp) => {
+      const list = handleUpdateList(user, false);
+      setData([list]);
+    });
+  };
+
   const handleHeade = () => {
     return (
       <table className="bg-[#2D2D2D] w-[800px] max-h-[450px] flex flex-col items-center justify-center gap-3 rounded-[0.5rem] pb-3">
@@ -53,12 +66,12 @@ export default function Users() {
           <td className={info}>{user.name}</td>
           <td className={info}>{user.email}</td>
           <td className={info}>{user.nick}</td>
-          <td className="flex gap-3">
+          <td>
             <button>
-              <FaPencilAlt className=" text-[#4DAB14] cursor-pointer" />
-            </button>
-            <button>
-              <FaTrashAlt className=" text-[#B12121] cursor-pointer" />
+              <FaTrashAlt
+                className=" text-[#B12121] cursor-pointer"
+                onClick={() => handleRemove(user)}
+              />
             </button>
           </td>
         </tr>
